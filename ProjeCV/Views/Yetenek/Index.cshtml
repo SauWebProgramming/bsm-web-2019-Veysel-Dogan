@@ -1,0 +1,24 @@
+﻿@model  ProjeCV.Models.Sinif.Class1
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Yetenekler</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var x in Model.Deger4)
+            {
+                <tr>
+                    <th>@x.ID</th>
+                    <td>@x.SKILL</td>
+                </tr>
+            }
+        </tbody>
+    </table>
