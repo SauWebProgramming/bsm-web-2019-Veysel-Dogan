@@ -382,6 +382,7 @@
     <Content Include="Views\Yetenek\Index.cshtml" />
     <Content Include="Views\Hobiler\Index.cshtml" />
     <Content Include="Views\Konferans\Index.cshtml" />
+    <Content Include="Views\Deneyimler\YeniDeneyim.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -17,5 +17,20 @@ namespace ProjeCV.Controllers
             cs.Deger2 = db.TBLEXPERIENCE.ToList();
             return View(cs);
         }
+        [HttpGet]
+        public ActionResult YeniDeneyim()
+        {
+            return View();
+        }
+
+
+
+        [HttpPost]
+        public ActionResult YeniDeneyim(TBLEXPERIENCE p)
+        {
+            db.TBLEXPERIENCE.Add(p);
+            db.SaveChanges();
+            return View();
+        }
     }
 }
