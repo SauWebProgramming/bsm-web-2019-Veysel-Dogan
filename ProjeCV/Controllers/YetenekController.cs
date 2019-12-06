@@ -17,5 +17,17 @@ namespace ProjeCV.Controllers
             cs.Deger4 = db.TBLSKILLS.ToList();
             return View(cs);
         }
+        [HttpGet]
+        public ActionResult YeniYetenek()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniYetenek(TBLSKILLS p)
+        {
+            db.TBLSKILLS.Add(p);
+            db.SaveChanges();
+            return View(p);
+        }
     }
 }

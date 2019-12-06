@@ -30,7 +30,7 @@ namespace ProjeCV.Controllers
         {
             db.TBLEXPERIENCE.Add(p);
             db.SaveChanges();
-            return View();
+            return View(p);
         }
     }
 }
