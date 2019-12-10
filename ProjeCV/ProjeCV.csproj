@@ -387,6 +387,7 @@
     <Content Include="Views\Yetenek\YeniYetenek.cshtml" />
     <Content Include="Views\Hobiler\YeniHobi.cshtml" />
     <Content Include="Views\Konferans\YeniKonferans.cshtml" />
+    <Content Include="Views\Hakkimda\VeriGetir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

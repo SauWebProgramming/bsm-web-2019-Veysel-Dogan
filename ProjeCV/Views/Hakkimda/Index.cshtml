@@ -13,22 +13,22 @@
             <th>ADRES</th>
             <th>TELEFON</th>
             <th>MAIL</th>
-            <th>HAKKIMDA</th>
+            <th>GÜNCELLE</th>
         </tr>
     </thead>
     <tbody>
         @foreach (var x in Model.Deger1)
         {
-            <tr>
-                <th>@x.ID</th>
-                <td>@x.NAME</td>
-                <td>@x.SURNAME</td>
-                <td>@x.ADDRESS</td>
-                <td>@x.PHONE</td>
-                <td>@x.MAIL</td>
-                <td>@x.ABOUT</td>
+        <tr>
+            <th>@x.ID</th>
+            <td>@x.NAME</td>
+            <td>@x.SURNAME</td>
+            <td>@x.ADDRESS</td>
+            <td>@x.PHONE</td>
+            <td>@x.MAIL</td>
+            <td><a href="/Hakkimda/VeriGetir/@x.ID" class="btn btn-warning">Güncelle</a></td>
 
-            </tr>
+        </tr>
         }
     </tbody>
 </table>
