@@ -19,15 +19,15 @@
     <tbody>
         @foreach (var x in Model.Deger2)
         {
-            <tr>
-                <th>@x.ID</th>
-                <td>@x.TITLE</td>
-                <td>@x.SUBTITLE</td>
-                <td>@x.DATE</td>
-                <td>@x.DETAILS</td>
-                <td><a href="/Deneyimler/DeneyimSil/@x.ID" class="btn btn-danger">Sil</a></td>
-                <td><a href="#" class="btn btn-success">Güncelle</a></td>
-            </tr>
+        <tr>
+            <th>@x.ID</th>
+            <td>@x.TITLE</td>
+            <td>@x.SUBTITLE</td>
+            <td>@x.DATE</td>
+            <td>@x.DETAILS</td>
+            <td>@Html.ActionLink("Sil", "DeneyimSil", new { id = x.ID }, new { @class = "btn btn-warning", onclick = "return confirm('Silmek istiyor musunuz?')" })</td>
+            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+        </tr>
         }
     </tbody>
 </table>

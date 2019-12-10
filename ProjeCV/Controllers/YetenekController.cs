@@ -29,5 +29,13 @@ namespace ProjeCV.Controllers
             db.SaveChanges();
             return View(p);
         }
+
+        public ActionResult YetenekSil(int id)
+        {
+            var yetenek = db.TBLSKILLS.Find(id);
+            db.TBLSKILLS.Remove(yetenek);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }
