@@ -26,7 +26,7 @@
             <td>@x.DATE</td>
             <td>@x.DETAILS</td>
             <td>@Html.ActionLink("Sil", "DeneyimSil", new { id = x.ID }, new { @class = "btn btn-warning", onclick = "return confirm('Silmek istiyor musunuz?')" })</td>
-            <td><a href="#" class="btn btn-success">Güncelle</a></td>
+            <td><a href="/Deneyimler/DeneyimGetir/@x.ID" class="btn btn-success">Güncelle</a></td>
         </tr>
         }
     </tbody>

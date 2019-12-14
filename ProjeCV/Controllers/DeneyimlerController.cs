@@ -30,7 +30,7 @@ namespace ProjeCV.Controllers
         {
             db.TBLEXPERIENCE.Add(p);
             db.SaveChanges();
-            return View(p);
+            return RedirectToAction("Index");
         }
 
         public ActionResult DeneyimSil(int id)
@@ -41,6 +41,20 @@ namespace ProjeCV.Controllers
             return RedirectToAction("Index");
         }
 
-
+        public ActionResult DeneyimGetir(int id)
+        {
+            var veri = db.TBLEXPERIENCE.Find(id);
+            return View("DeneyimGetir", veri);
+        }
+        public ActionResult Guncelle(TBLEXPERIENCE p)
+        {
+            var veriler = db.TBLEXPERIENCE.Find(p.ID);
+            veriler.TITLE = p.TITLE;
+            veriler.SUBTITLE = p.SUBTITLE;
+            veriler.DETAILS = p.DETAILS;
+            veriler.DATE = p.DATE;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

@@ -27,7 +27,7 @@ namespace ProjeCV.Controllers
         {
             db.TBLEDUCATION.Add(p);
             db.SaveChanges();
-            return View(p);
+            return RedirectToAction("Index");
         }
         public ActionResult EgitimSil(int id)
         {
@@ -35,6 +35,22 @@ namespace ProjeCV.Controllers
             db.TBLEDUCATION.Remove(egitim);
             db.SaveChanges();
             return RedirectToAction("Index");
-        } 
+        }
+
+        public ActionResult EgitimGetir(int id)
+        {
+            var egitim = db.TBLEDUCATION.Find(id);
+            return View("EgitimGetir", egitim);
+        }
+        public ActionResult Guncelle(TBLEDUCATION p)
+        {
+            var veriler = db.TBLEDUCATION.Find(p.ID);
+            veriler.TITLE = p.TITLE;
+            veriler.SUBTITLE = p.SUBTITLE;
+            veriler.DEPARTMENT = p.DEPARTMENT;
+            veriler.GPA = p.GPA;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

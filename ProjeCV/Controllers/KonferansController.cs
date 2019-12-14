@@ -11,11 +11,16 @@ namespace ProjeCV.Controllers
     {
         // GET: Konferans
         DbCvEntities db = new DbCvEntities();
-        public ActionResult Index()
+        public ActionResult Index(string p)
         {
-            Class1 cs = new Class1();
-            cs.Deger6 = db.TBLAWARDS.ToList();
-            return View(cs);
+            var degerler = from d in db.TBLAWARDS select d;
+            if (!string.IsNullOrEmpty(p))
+            {
+                degerler = degerler.Where(m => m.AWARD.Contains(p));
+            }
+           // Class1 cs = new Class1();
+           // cs.Deger6 = db.TBLAWARDS.ToList();
+            return View(degerler.ToList());
         }
         [HttpGet]
         public ActionResult YeniKonferans()
@@ -30,7 +35,7 @@ namespace ProjeCV.Controllers
         {
             db.TBLAWARDS.Add(p);
             db.SaveChanges();
-            return View(p);
+            return RedirectToAction("Index");
         }
 
         public ActionResult KonferansSil(int id)
@@ -40,5 +45,24 @@ namespace ProjeCV.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+
+
+
+        public ActionResult KonferansGetir(int id)
+        {
+            var konferans = db.TBLAWARDS.Find(id);
+            return View("KonferansGetir", konferans);
+        }
+        public ActionResult Guncelle(TBLAWARDS p)
+        {
+            var veriler = db.TBLAWARDS.Find(p.ID);
+            veriler.AWARD = p.AWARD;
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }

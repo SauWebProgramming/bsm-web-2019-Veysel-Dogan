@@ -31,13 +31,29 @@ namespace ProjeCV.Controllers
         {
             db.TBLINTEREST.Add(p);
             db.SaveChanges();
-            return View(p);
+            return RedirectToAction("Index");
         }
 
         public ActionResult HobiSil(int id)
         {
             var hobi = db.TBLINTEREST.Find(id);
             db.TBLINTEREST.Remove(hobi);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+
+
+        public ActionResult HobiGetir(int id)
+        {
+            var hobi = db.TBLINTEREST.Find(id);
+            return View("HobiGetir", hobi);
+        }
+        public ActionResult Guncelle(TBLINTEREST p)
+        {
+            var veriler = db.TBLINTEREST.Find(p.ID);
+            veriler.INTEREST = p.INTEREST;
             db.SaveChanges();
             return RedirectToAction("Index");
         }

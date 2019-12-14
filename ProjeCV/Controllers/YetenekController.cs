@@ -5,17 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using ProjeCV.Models.Entity;
 using ProjeCV.Models.Sinif;
+using PagedList;
+using PagedList.Mvc;
 namespace ProjeCV.Controllers
 {
     public class YetenekController : Controller
     {
         // GET: Yetenek
         DbCvEntities db = new DbCvEntities();
-        public ActionResult Index()
+        public ActionResult Index(int sayfa=1)
         {
-            Class1 cs = new Class1();
-            cs.Deger4 = db.TBLSKILLS.ToList();
-            return View(cs);
+           // Class1 cs = new Class1();
+            var degerler = db.TBLSKILLS.ToList().ToPagedList(sayfa, 3);
+            return View(degerler);
         }
         [HttpGet]
         public ActionResult YeniYetenek()
@@ -27,13 +29,27 @@ namespace ProjeCV.Controllers
         {
             db.TBLSKILLS.Add(p);
             db.SaveChanges();
-            return View(p);
+            return RedirectToAction("Index");
         }
 
         public ActionResult YetenekSil(int id)
         {
             var yetenek = db.TBLSKILLS.Find(id);
             db.TBLSKILLS.Remove(yetenek);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+        public ActionResult YetenekGetir(int id)
+        {
+            var yetenek = db.TBLSKILLS.Find(id);
+            return View("YetenekGetir", yetenek);
+        }
+        public ActionResult Guncelle(TBLSKILLS p)
+        {
+            var veriler = db.TBLSKILLS.Find(p.ID);
+            veriler.SKILL = p.SKILL;
             db.SaveChanges();
             return RedirectToAction("Index");
         }
