@@ -11,6 +11,7 @@ namespace ProjeCV.Controllers
     {
         // GET: Konferans
         DbCvEntities db = new DbCvEntities();
+        [Authorize(Users = "veysel.dogan@ogr.sakarya.edu.tr")]
         public ActionResult Index(string p)
         {
             var degerler = from d in db.TBLAWARDS select d;

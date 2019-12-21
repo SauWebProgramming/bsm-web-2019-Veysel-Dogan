@@ -1,5 +1,7 @@
-﻿@model  ProjeCV.Models.Sinif.Class1
-
+﻿@using ProjeCV.Models.Entity
+@using PagedList
+@using PagedList.Mvc
+@model PagedList.IPagedList<TBLINTEREST>
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
@@ -15,7 +17,7 @@
             </tr>
         </thead>
         <tbody>
-            @foreach (var x in Model.Deger5)
+            @foreach (var x in Model)
             {
             <tr>
                 <th>@x.ID</th>
@@ -26,4 +28,5 @@
             }
         </tbody>
     </table>
+@Html.PagedListPager((IPagedList)Model,sayfa=>Url.Action("Index", new { sayfa}))
 <a href="/Hobiler/YeniHobi" class="btn btn-info">Yeni Hobi Ekle</a>

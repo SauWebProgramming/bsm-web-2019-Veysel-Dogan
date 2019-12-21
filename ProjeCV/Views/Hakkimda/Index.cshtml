@@ -3,7 +3,6 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-
 <table class="table table-bordered">
     <thead>
         <tr>
@@ -19,16 +18,16 @@
     <tbody>
         @foreach (var x in Model.Deger1)
         {
-        <tr>
-            <th>@x.ID</th>
-            <td>@x.NAME</td>
-            <td>@x.SURNAME</td>
-            <td>@x.ADDRESS</td>
-            <td>@x.PHONE</td>
-            <td>@x.MAIL</td>
-            <td><a href="/Hakkimda/VeriGetir/@x.ID" class="btn btn-warning">Güncelle</a></td>
+            <tr>
+                <th>@x.ID</th>
+                <td>@x.NAME</td>
+                <td>@x.SURNAME</td>
+                <td>@x.ADDRESS</td>
+                <td>@x.PHONE</td>
+                <td>@x.MAIL</td>
+                <td><a href="/Hakkimda/VeriGetir/@x.ID" class="btn btn-warning">Güncelle</a></td>
 
-        </tr>
+            </tr>
         }
     </tbody>
 </table>

@@ -12,27 +12,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-
     <title>Veysel|2019</title>
-    <link href="~/startbootstrap-resume-gh-pages/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+
+    <link href="~/Content/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <!-- Bootstrap core CSS -->
     <!-- Custom fonts for this template -->
     <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
-    <link href="~/startbootstrap-resume-gh-pages/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
-
+    <link href="~/Content/vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
     <!-- Custom styles for this template -->
-    <link href="~/startbootstrap-resume-gh-pages/css/resume.min.css" rel="stylesheet">
-   
+    <link href="~/Content/css/resume.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
+   @Html.Partial("_LoginPartial")
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
         <a class="navbar-brand js-scroll-trigger" href="#page-top">
-            <span class="d-block d-lg-none">Clarence Taylor</span>
+            <span class="d-block d-lg-none">Veysel Doğan</span>
             <span class="d-none d-lg-block">
-                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="~/startbootstrap-resume-gh-pages/img/profile.jpg" alt="">
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="~/Content/img/profile.jpg" alt="">
             </span>
         </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -78,16 +77,16 @@
                     </div>
                     <p class="lead mb-5">@x.ABOUT</p>
                     <div class="social-icons">
-                        <a href="#">
+                        <a href="https://www.linkedin.com/in/veysel-do%C4%9Fan-67b584161/">
                             <i class="fab fa-linkedin-in"></i>
                         </a>
-                        <a href="#">
+                        <a href="https://github.com/veysoburho">
                             <i class="fab fa-github"></i>
                         </a>
-                        <a href="#">
+                        <a href="https://twitter.com/veyso_dogan">
                             <i class="fab fa-twitter"></i>
                         </a>
-                        <a href="#">
+                        <a href="https://www.facebook.com/darkpluss31">
                             <i class="fab fa-facebook-f"></i>
                         </a>
                     </div>
@@ -165,34 +164,13 @@
                         <i class="fab fa-js-square"></i>
                     </li>
                     <li class="list-inline-item">
-                        <i class="fab fa-angular"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-react"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-node-js"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-sass"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-less"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-wordpress"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-gulp"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-grunt"></i>
-                    </li>
-                    <li class="list-inline-item">
-                        <i class="fab fa-npm"></i>
-                    </li>
-                    <li class="list-inline-item">
                         <i class="fab fa-apple"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-android"></i>
+                    </li>
+                    <li class="list-inline-item">
+                        <i class="fab fa-adobe"></i>
                     </li>
                 </ul>
 
@@ -240,17 +218,13 @@
         </section>
 
     </div>
-
     <!-- Bootstrap core JavaScript -->
-    <script src="~/startbootstrap-resume-gh-pages/vendor/jquery/jquery.min.js"></script>
-    <script src="~/startbootstrap-resume-gh-pages/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="~/Content/vendor/jquery/jquery.min.js"></script>
+    <script src="~/Content/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Plugin JavaScript -->
-    <script src="~/startbootstrap-resume-gh-pages/vendor/jquery-easing/jquery.easing.min.js"></script>
-
+    <script src="~/Content/vendor/jquery-easing/jquery.easing.min.js"></script>
     <!-- Custom scripts for this template -->
-    <script src="~/startbootstrap-resume-gh-pages/js/resume.min.js"></script>
-
+    <script src="~/Content/js/resume.min.js"></script>
 </body>
 
 </html>

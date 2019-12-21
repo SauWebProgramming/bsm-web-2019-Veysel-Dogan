@@ -11,6 +11,7 @@ namespace ProjeCV.Controllers
     {
         // GET: Hakkimda
         DbCvEntities db = new DbCvEntities();
+        [Authorize(Users = "veysel.dogan@ogr.sakarya.edu.tr")]
         public ActionResult Index()
         {
             Class1 cs = new Class1();

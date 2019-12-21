@@ -13,10 +13,11 @@ namespace ProjeCV.Controllers
     {
         // GET: Yetenek
         DbCvEntities db = new DbCvEntities();
+        [Authorize(Users = "veysel.dogan@ogr.sakarya.edu.tr")]
         public ActionResult Index(int sayfa=1)
         {
            // Class1 cs = new Class1();
-            var degerler = db.TBLSKILLS.ToList().ToPagedList(sayfa, 3);
+            var degerler = db.TBLSKILLS.ToList().ToPagedList(sayfa, 8);
             return View(degerler);
         }
         [HttpGet]

@@ -5,18 +5,19 @@ using System.Web;
 using System.Web.Mvc;
 using ProjeCV.Models.Entity;
 using ProjeCV.Models.Sinif;
+using PagedList;
+using PagedList.Mvc;
 namespace ProjeCV.Controllers
 {
     public class HobilerController : Controller
     {
         // GET: Hobiler
         DbCvEntities db = new DbCvEntities();
-
-        public ActionResult Index()
+        [Authorize(Users = "veysel.dogan@ogr.sakarya.edu.tr")]
+        public ActionResult Index(int sayfa=1)
         {
-            Class1 cs = new Class1();
-            cs.Deger5 = db.TBLINTEREST.ToList();
-            return View(cs);
+           var degerler = db.TBLINTEREST.ToList().ToPagedList(sayfa,5);
+            return View(degerler);
         }
         [HttpGet]
         public ActionResult YeniHobi()

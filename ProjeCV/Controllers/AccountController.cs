@@ -163,7 +163,7 @@ namespace ProjeCV.Controllers
                     // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
                     // await UserManager.SendEmailAsync(user.Id, "Hesabınızı onaylayın", "Lütfen hesabınızı onaylamak için <a href=\"" + callbackUrl + "\">buraya tıklayın</a>");
 
-                    return RedirectToAction("Index", "Home");
+                    return RedirectToAction("Index", "Default");
                 }
                 AddErrors(result);
             }
@@ -392,7 +392,7 @@ namespace ProjeCV.Controllers
         public ActionResult LogOff()
         {
             AuthenticationManager.SignOut(DefaultAuthenticationTypes.ApplicationCookie);
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index","Hakkimda");
         }
 
         //

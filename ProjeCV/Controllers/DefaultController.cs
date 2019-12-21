@@ -11,6 +11,7 @@ namespace ProjeCV.Controllers
     {
         // GET: Default
         DbCvEntities db = new DbCvEntities();
+        [Authorize]
         public ActionResult Index()
         {
             Class1 cs = new Class1();
