@@ -21,18 +21,20 @@
                 <a class="navbar-brand" href="/Default/Index">Veysel|2019</a>
             </div>
             <ul class="nav navbar-nav">
-                <li><a href="/Hakkimda/Index/">Hakkımda</a></li>
-                <li><a href="/Deneyimler/Index">Deneyimlerim</a></li>
-                <li><a href="/Egitim/Index">Eğitim Hayatım</a></li>
-                <li><a href="/Yetenek/Index">Yeteneklerim</a></li>
-                <li><a href="/Hobiler/Index">Hobilerim</a></li>
-                <li><a href="/Konferans/Index">Konferanslar</a></li>
+             
+                <li>@Html.ActionLink(ProjeCV.Resources.ProjeCVHomeTexts.hakkimda,"Index","Hakkimda")</li>
+                <li>@Html.ActionLink(ProjeCV.Resources.ProjeCVHomeTexts.deneyimlerim, "Index", "Deneyimler")</li>
+                <li>@Html.ActionLink(ProjeCV.Resources.ProjeCVHomeTexts.egitim, "Index", "Egitim")</li>
+                <li>@Html.ActionLink(ProjeCV.Resources.ProjeCVHomeTexts.yeteneklerim, "Index", "Yetenek")</li>
+                <li>@Html.ActionLink(ProjeCV.Resources.ProjeCVHomeTexts.hobilerim, "Index", "Hobiler")</li>
+                <li>@Html.ActionLink(ProjeCV.Resources.ProjeCVHomeTexts.konferanslarim, "Index", "Konferans")</li>
+                <li>@Html.ActionLink(ProjeCV.Resources.ProjeCVHomeTexts.dil, "Index", "Language")</li>
+                <li>@DateTime.Now.ToString()</li>
                 @Html.Partial("_LoginPartial")
 
             </ul>
         </div>
     </nav>
-
     <div class="container">
         @RenderBody()
     </div>
